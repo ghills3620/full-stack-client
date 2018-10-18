@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Wodify</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <form id="sign-up-form">
+              <legend>Sign Up!</legend>
+              <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
+              <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
+              <input required placeholder="Enter password_confirmation" name="credentials[password_confirmation]" type="password"/>
+              <input type="submit" />
+            </form>
+
+            <form id="sign-in-form">
+              <legend>Sign In!</legend>
+              <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
+              <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
+              <input type="submit" />
+            </form>
+
+
+            <form id="change-password-form">
+              <legend>Change Password</legend>
+              <input required placeholder="Old Password" name="passwords[old]" type="password"/>
+              <input required placeholder="New Passowrd" name="passwords[new]" type="password"/>
+              <input type="submit" />
+            </form>
+            <br>
+            <button id="sign-out-button" class=hidden> Sign Out </button>
+            <br>
     </body>
 </html>

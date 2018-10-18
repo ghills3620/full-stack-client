@@ -1,4 +1,5 @@
 'use strict'
+const store = require('./store.js')
 
 const signUpSuccess = function () {
   $('#display-message').html('Sign up successful')
@@ -21,6 +22,7 @@ const signInSuccess = function (response) {
   $('#display-message').css('color', 'green')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  store.user = response.user
   $('#change-password-form').trigger('reset')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
