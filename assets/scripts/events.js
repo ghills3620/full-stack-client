@@ -61,6 +61,24 @@ const onDeleteWod = (event) => {
   }
 }
 
+const onUpdateResults = function (event) {
+  event.preventDefault()
+  const wodId = $(event.target).closest('section').data('id')
+  if (confirm('Update this workout?')) {
+    api.updateResults(wodId)
+      .then(() => onGetResults(event))
+      .catch(ui.failure)
+  }
+}
+
+const onShowWod = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.showWod(data)
+    .then(ui.getResultsSuccess)
+    .catch(ui.getGameFailure)
+}
+
 const addHandlers = () => {
   $('#get-results').on('click', onGetResults)
   $('.content').on('click', 'button', onDeleteWod)
@@ -74,5 +92,7 @@ module.exports = {
   onGetResults,
   onCreateMetcon,
   addHandlers,
-  onDeleteWod
+  onDeleteWod,
+  onUpdateResults,
+  onShowWod
 }

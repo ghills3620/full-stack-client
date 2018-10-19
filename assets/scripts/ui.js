@@ -86,6 +86,15 @@ const getResultsSuccess = (data) => {
   $('#results').html(showWodsHtml)
 }
 
+const getResultsFailure = function (response) {
+  $('#display-message').html('Try Again')
+  $('#display-message').css('color', 'red')
+}
+
+const failure = (error) => {
+  console.error(error)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -95,5 +104,7 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  getResultsSuccess
+  getResultsSuccess,
+  getResultsFailure,
+  failure
 }

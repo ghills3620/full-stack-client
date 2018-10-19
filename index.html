@@ -34,16 +34,29 @@
               <input type="submit" />
             </form>
             <br>
-            <button id="sign-out-button" class=hidden> Sign Out </button>
+            <button id="sign-out-button" type ="button" class="hidden btn btn-secondary"> Sign Out </button>
             <br>
             <div id="results" class="content"></div>
             <button id="get-results" type="button" class="btn btn-secondary">Public Whiteboard</button>
 
             <form id="create-metcon">
-                    <legend>WOD</legend>
-                    <textarea placeholder="Metcon" name="wod[metcon]" row="5" col="30"></textarea>
-                    <textarea placeholder="Results" name="wod[result]" row="5" col="30"></textarea>
-                    <input type="submit" />
-                  </form>
+              <legend>Input WOD</legend>
+              <textarea placeholder="Metcon" name="wod[metcon]" row="5" col="30"></textarea>
+              <textarea placeholder="Results" name="wod[result]" row="5" col="30"></textarea>
+              <input type="submit" />
+            </form>
+
+            <form id="update-results">
+              <legend>Update WOD</legend>
+              <textarea placeholder="New Results" name="wod[result]" row="3" col="20"></textarea>
+              <input type="submit" />
+            </form>
+
+            <form id="search-wod">
+              <legend>Searh WOD</legend>
+              <textarea placeholder="Id" name="wod[id]" row="3" col="20"></textarea>
+              <textarea placeholder="Results" name="wod[result]" row="3" col="20"></textarea>
+              <input type="submit" />
+            </form>
     </body>
 </html>

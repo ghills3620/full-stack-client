@@ -58,9 +58,9 @@ const createMetcon = function (data) {
   })
 }
 
-const deleteWod = function () {
+const deleteWod = function (wodId) {
   return $.ajax({
-    url: config.apiUrl + '/wods',
+    url: config.apiUrl + '/wods/' + wodId,
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -68,6 +68,22 @@ const deleteWod = function () {
   })
 }
 
+const updateResults = function (wodId) {
+  return $.ajax({
+    url: config.apiUrl + '/wods/' + wodId,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
+const searchWod = function (wodId) {
+  return $.ajax({
+    url: config.apiUrl + '/wods/' + wodId,
+    method: 'GET'
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -75,5 +91,7 @@ module.exports = {
   signOut,
   getResults,
   createMetcon,
-  deleteWod
+  deleteWod,
+  searchWod,
+  updateResults
 }

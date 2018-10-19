@@ -13,5 +13,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#new-game').on('click', authEvents.onNewGame)
   $('#create-metcon').on('submit', authEvents.onCreateMetcon)
+  $('#update-results').on('submit', authEvents.onUpdateResults)
+  $('#search-wod').on('submit', authEvents.onSearchWod)
   authEvents.addHandlers()
 })
