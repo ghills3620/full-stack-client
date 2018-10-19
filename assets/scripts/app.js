@@ -12,5 +12,6 @@ $(() => {
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#new-game').on('click', authEvents.onNewGame)
-  $('#get-games').on('click', authEvents.onGetGames)
+  $('#create-metcon').on('submit', authEvents.onCreateMetcon)
+  authEvents.addHandlers()
 })

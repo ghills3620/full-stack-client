@@ -40,11 +40,40 @@ const signOut = function () {
   })
 }
 
+const getResults = function () {
+  return $.ajax({
+    url: config.apiUrl + '/wods',
+    method: 'GET'
+  })
+}
+
+const createMetcon = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/wods',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: data
+  })
+}
+
+const deleteWod = function () {
+  return $.ajax({
+    url: config.apiUrl + '/wods',
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
-  // newGame,
-  // getGames
+  signOut,
+  getResults,
+  createMetcon,
+  deleteWod
 }

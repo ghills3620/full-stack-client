@@ -9,7 +9,8 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <body class="container-fluid">
+      <h3 id="display-message"></h3>
       <form id="sign-up-form">
               <legend>Sign Up!</legend>
               <input required placeholder="Enter Email" name="credentials[email]" type="email"/>
@@ -35,5 +36,14 @@
             <br>
             <button id="sign-out-button" class=hidden> Sign Out </button>
             <br>
+            <div id="results" class="content"></div>
+            <button id="get-results" type="button" class="btn btn-secondary">Public Whiteboard</button>
+
+            <form id="create-metcon">
+                    <legend>WOD</legend>
+                    <textarea placeholder="Metcon" name="wod[metcon]" row="5" col="30"></textarea>
+                    <textarea placeholder="Results" name="wod[result]" row="5" col="30"></textarea>
+                    <input type="submit" />
+                  </form>
     </body>
 </html>

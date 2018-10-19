@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store.js')
+const showWodsTemplate = require('./templates/wod-listing.handlebars')
 
 const signUpSuccess = function () {
   $('#display-message').html('Sign up successful')
@@ -72,6 +73,19 @@ const signOutFailure = function () {
   $('#display-message').css('color', 'red')
 }
 
+// const getResultsSuccess = function (response) {
+//   for (let i = 1; i < response.wods.length; i++) {
+// $('#results').append('<li><h4>' + 'Athelete ' + response.wods[i].user.email + '</h4> Metcon ' + response.wods[i].metcon + ', Results <em>' + response.wods[i].result + '</em></li>')
+//     //   const getWod = ['Athelete ' + `${response.wods[i].user.email} `, 'metcon ' + `${response.wods[i].metcon} `, ' results ' + `${response.wods[i].result} `]
+//     //   // console.log(['Athelete ' + `${response.wods[i].user.email} `, 'metcon ' + `${response.wods[i].metcon} `, ' results ' + `${response.wods[i].result}`])
+//     //   $('#results').append`${getWod}`
+//   }
+
+const getResultsSuccess = (data) => {
+  const showWodsHtml = showWodsTemplate({ wods: data.wods })
+  $('#results').html(showWodsHtml)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -80,5 +94,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  getResultsSuccess
 }
