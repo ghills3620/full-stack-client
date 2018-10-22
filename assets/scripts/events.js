@@ -47,13 +47,14 @@ const onCreateMetcon = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createMetcon(data)
-    .then(console.log(data))
+    .then(() => onGetResults(event))
     .catch(console.log(data))
 }
 
 const onDeleteWod = (event) => {
   event.preventDefault()
   const wodId = $(event.target).closest('section').data('id')
+  console.log($(event.target))
   if (confirm('Are you sure you want to delete this workout?')) {
     api.deleteWod(wodId)
       .then(() => onGetResults(event))
@@ -63,19 +64,19 @@ const onDeleteWod = (event) => {
 
 const onUpdateResults = function (event) {
   event.preventDefault()
-  const wodId = $(event.target).closest('section').data('id')
-  if (confirm('Update this workout?')) {
-    api.updateResults(wodId)
-      .then(() => onGetResults(event))
-      .catch(ui.failure)
-  }
+  const data = getFormFields(event.target)
+  // if (confirm('Update this workout?')) {
+  api.updateResults(data.wod)
+    .then(() => onGetResults(event))
+    .catch(ui.failure)
+  // }
 }
 
-const onShowWod = function (event) {
+const onSearchWod = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.showWod(data)
-    .then(ui.getResultsSuccess)
+  api.searchWod(data.wod)
+    .then(ui.showWodSuccess)
     .catch(ui.getGameFailure)
 }
 
@@ -94,5 +95,5 @@ module.exports = {
   addHandlers,
   onDeleteWod,
   onUpdateResults,
-  onShowWod
+  onSearchWod
 }

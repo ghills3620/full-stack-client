@@ -95,6 +95,11 @@ const failure = (error) => {
   console.error(error)
 }
 
+const showWodSuccess = (data) => {
+  const searchWodHtml = showWodsTemplate({ wods: data })
+  $('#results').html(searchWodHtml)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -106,5 +111,6 @@ module.exports = {
   changePasswordFailure,
   getResultsSuccess,
   getResultsFailure,
+  showWodSuccess,
   failure
 }

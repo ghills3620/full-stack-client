@@ -68,19 +68,20 @@ const deleteWod = function (wodId) {
   })
 }
 
-const updateResults = function (wodId) {
+const updateResults = function (wod) {
   return $.ajax({
-    url: config.apiUrl + '/wods/' + wodId,
+    url: config.apiUrl + '/wods/' + wod.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    }
+    },
+    data: {wod}
   })
 }
 
-const searchWod = function (wodId) {
+const searchWod = function (wod) {
   return $.ajax({
-    url: config.apiUrl + '/wods/' + wodId,
+    url: config.apiUrl + '/wods/' + wod.id,
     method: 'GET'
   })
 }
