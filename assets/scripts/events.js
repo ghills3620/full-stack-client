@@ -76,6 +76,7 @@ const onSearchWod = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.searchWod(data.wod)
+  console.log(data.wod)
     .then(ui.showWodSuccess)
     .catch(ui.getGameFailure)
 }

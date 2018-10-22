@@ -14,3 +14,8 @@ require('./assets/scripts/app.js')
 
 // styles
 require('./assets/styles/index.scss')
+
+$('#change-password-form').hide()
+$('#update-results').hide()
+$('#create-metcon').hide()
+$('#sign-out-button').hide()
