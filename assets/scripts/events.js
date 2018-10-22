@@ -48,7 +48,7 @@ const onCreateMetcon = function (event) {
   const data = getFormFields(event.target)
   api.createMetcon(data)
     .then(() => onGetResults(event))
-    .catch(console.log(data))
+    .catch(ui.createMetconFailure)
 }
 
 const onDeleteWod = (event) => {

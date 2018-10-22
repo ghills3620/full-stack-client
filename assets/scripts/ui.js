@@ -8,6 +8,10 @@ const signUpSuccess = function () {
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const signUpFailure = function () {
@@ -16,6 +20,10 @@ const signUpFailure = function () {
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const signInSuccess = function (response) {
@@ -30,6 +38,13 @@ const signInSuccess = function (response) {
   $('#change-password-form').show()
   $('#sign-out-button').removeClass('hidden')
   $('#change-password-form').show()
+  $('#update-results').show()
+  $('#create-metcon').show()
+  $('#sign-out-button').show()
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const signInFailure = function () {
@@ -39,18 +54,30 @@ const signInFailure = function () {
   $('#sign-up-form').trigger('reset')
   $('#change-password-form').trigger('reset')
   $('#change-password-form').hide()
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const changePasswordSuccess = function (response) {
   $('#display-message').html('Change password succesful')
   $('#display-message').css('color', 'green')
   $('#change-password-form').trigger('reset')
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const changePasswordFailure = function (response) {
   $('#display-message').html('Password Failed to change, please try again')
   $('#display-message').css('color', 'red')
   $('#change-password-form').trigger('reset')
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
@@ -66,11 +93,22 @@ const signOutSuccess = function (response) {
   $('#sign-in-form').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#change-password-form').hide()
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#update-results').hide()
+  $('#create-metcon').hide()
+  $('#sign-out-button').hide()
+  $('#search-wod').trigger('reset')
+  $('#results').trigger('reset')
 }
 
 const signOutFailure = function () {
   $('#display-message').html('Something went wrong, please try again')
   $('#display-message').css('color', 'red')
+  $('#search-wod').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
 }
 
 // const getResultsSuccess = function (response) {
@@ -84,20 +122,45 @@ const signOutFailure = function () {
 const getResultsSuccess = (data) => {
   const showWodsHtml = showWodsTemplate({ wods: data.wods })
   $('#results').html(showWodsHtml)
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
 }
 
 const getResultsFailure = function (response) {
   $('#display-message').html('Try Again')
   $('#display-message').css('color', 'red')
+  $('#search-wod').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
 }
 
 const failure = (error) => {
   console.error(error)
 }
 
+const createMetconFailure = function (data) {
+  $('#display-message').html('Workout input failed')
+}
+
 const showWodSuccess = (data) => {
   const searchWodHtml = showWodsTemplate({ wods: data })
   $('#results').html(searchWodHtml)
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
+}
+
+const getGameFailure = function (data) {
+  $('#display-message').html('Enter vaild WOD Id')
+  $('#display-message').css('color', 'red')
+  $('#square').addClass('hidden')
 }
 
 module.exports = {
@@ -112,5 +175,7 @@ module.exports = {
   getResultsSuccess,
   getResultsFailure,
   showWodSuccess,
-  failure
+  failure,
+  createMetconFailure,
+  getGameFailure
 }
