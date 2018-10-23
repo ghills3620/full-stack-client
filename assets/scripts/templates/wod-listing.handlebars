@@ -7,8 +7,9 @@
     <h3 data-id="{{wod.id}}"> <small>Athelete: {{wod.user.email}}</small></h3>
   <section data-id="{{wod.id}}">
     <p>{{#if wod.metcon}}
-    <medium>Wod Id: <medium>{{wod.id}},  <medium>Metcon: </medium>{{wod.metcon}},  <medium>Results: </medium>{{wod.result}}
-     <medium>WOD Id: {{wod.id}}, <medium>Metcon: </medium>{{wod.metcon}},  <medium>Results: </medium>{{wod.result}}
+    <medium>Wod Id: <medium>{{wod.id}}
+    <p><medium>Metcon: </medium>{{wod.metcon}}</p>
+    <p><medium>Results: </medium>{{wod.result}}</p>
     {{else}}
       go workout.
     {{/if}}
