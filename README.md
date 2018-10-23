@@ -1,4 +1,4 @@
-[![Wodify Logo](http://crossfitparadox.com/wp-content/uploads/2015/09/wodify-logo.jpe)]
+![Wodify Logo](http://crossfitparadox.com/wp-content/uploads/2015/09/wodify-logo.jpe)
 
 ## Technologies Used
 
@@ -43,48 +43,48 @@ https://imgur.com/8htgRoW
 ## Project Planning
 
 Planning
-- [x]  Review full-stack-project-practice
-- [x]  Review full-stack-project-modeling-lab
-- [x]  Create User Stories
-- [x]  Create Wire Frames
-- [x]  Create ERD
+- []  Review full-stack-project-practice
+- []  Review full-stack-project-modeling-lab
+- []  Create User Stories
+- []  Create Wire Frames
+- []  Create ERD
 
 Set Up
 API
-- [x]  Download Rails API Template
-- [x]  Create a Github Repository
-- [x]  Deploy to Heroku
+- []  Download Rails API Template
+- []  Create a Github Repository
+- []  Deploy to Heroku
 Client
-- [x]  Download Browser Template
-- [x]  Create a Github Repository
-- [x]  Deploy to Github Pages
+- []  Download Browser Template
+- []  Create a Github Repository
+- []  Deploy to Github Pages
 
 API
-- [x]  Review rails-api-one-to-many or rails-api-many-to-many
-- [x]  Scaffold your resource
-- [x]  Test your resource's end points with curl scripts
-- [x]  Update resource controller to inherit from Protected or OpenRead controller
-- [x]  Test your resource's end points with curl scripts
-- [x]  Add the relationship to a User
-- [x]  Add User ownership to resource controller
+- []  Review rails-api-one-to-many or rails-api-many-to-many
+- []  Scaffold your resource
+- []  Test your resource's end points with curl scripts
+- []  Update resource controller to inherit from Protected or OpenRead controller
+- []  Test your resource's end points with curl scripts
+- []  Add the relationship to a User
+- []  Add User ownership to resource controller
 
 Client
-- [x]  Review api-token-auth
-- [x]  Sign Up (curl then web app)
-- [x]  Sign In (curl then web app)
-- [x]  Change Password (curl then web app)
-- [x]  Sign Out (curl then web page)
-- [x]  All API calls have success or failure messages
-- [x]  Review query-ajax-post
-- [x]  Create resource (curl then web app)
-- [x]  Get all of their owned resources (curl then web app)
-- [x]  Delete single resource (curl then web app)
-- [x]  Update single resource (curl then web app)
+- []  Review api-token-auth
+- []  Sign Up (curl then web app)
+- []  Sign In (curl then web app)
+- []  Change Password (curl then web app)
+- []  Sign Out (curl then web page)
+- []  All API calls have success or failure messages
+- []  Review query-ajax-post
+- []  Create resource (curl then web app)
+- []  Get all of their owned resources (curl then web app)
+- []  Delete single resource (curl then web app)
+- []  Update single resource (curl then web app)
 
 Final Touches
-- [x]  README
-- [x]  Troubleshoot/Debug
-- [x]  Style
+- []  README
+- []  Troubleshoot/Debug
+- []  Style
 
 ## The Process
 
@@ -106,4 +106,5 @@ help. Ive learned alot during this process and feel more confident after finishi
 ## Links
 
 - [Wodify Client](https://ghills3620.github.io/full-stack-client/)
-- [Wodify Server] (https://wodify.herokuapp.com/)
+- [Wodify Server](https://wodify.herokuapp.com/)
+- [Server Read Me](https://github.com/ghills3620/full-stack-app)
