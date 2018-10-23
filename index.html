@@ -41,21 +41,25 @@
 
             <form id="create-metcon">
               <legend>Input WOD</legend>
-              <textarea placeholder="Metcon" name="wod[metcon]" row="5" col="30"></textarea>
-              <textarea placeholder="Results" name="wod[result]" row="5" col="30"></textarea>
+              <textarea required placeholder="Metcon" name="wod[metcon]" row="5" col="30"></textarea>
+              <textarea required placeholder="Results" name="wod[result]" row="5" col="30"></textarea>
               <input type="submit" />
             </form>
 
             <form id="update-results">
               <legend>Update WOD</legend>
-              <textarea id="wodId" placeholder="Id" name="wod[id]" row="3" col="20"></textarea>
-              <textarea placeholder="New Results" name="wod[result]" row="3" col="20"></textarea>
+              <textarea required id="wodId" placeholder="Id" name="wod[id]" row="3" col="20"></textarea>
+              <textarea required placeholder="New Results" name="wod[result]" row="3" col="20"></textarea>
               <input type="submit" />
             </form>
 
             <form id="search-wod">
               <legend>Searh WOD</legend>
+<<<<<<< HEAD
               <input placeholder="Id" name="wod[id]" ></input>
+=======
+              <textarea required placeholder="Id" name="wod[id]" row="2" col="10"></textarea>
+>>>>>>> wodify
               <input type="submit" />
             </form>
     </body>

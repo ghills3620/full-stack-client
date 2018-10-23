@@ -1,113 +1,109 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+[![Wodify Logo](http://crossfitparadox.com/wp-content/uploads/2015/09/wodify-logo.jpe)]
 
-# browser-template
+## Technologies Used
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+[Javascript](https://www.javascript.com/)
+  - An object-oriented computer programming language commonly used to create interactive effects within web browsers.
 
-## Installation
+[Handlebars](https://handlebarsjs.com/)
+  - Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.
 
-1. [Download](../../archive/master.zip) this template.
-1. Move to the `wdi/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `wodify` with the name of
-    your project.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
+[Bootstrap](https://getbootstrap.com/)
+  - Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
 
-## Structure
+## Unsolved Problems/User Stories
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+Version 1
+ - Being able to style the site as I would like it to look
+ - Giving the user the ability to have a user name displayed instead of their email
 
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
+Version 2
+ - Non signed in User
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
+  - As a non signed in user, I want to be able to view the current workout of the day
 
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
+ - Signed in User
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+  - As a signed in user, I want to be able to view the current workout of the day
+  - As a signed in user, I want to be able to input pre-made/detailed results
+    - type of workout
+    - named or custom workout
+  - As a signed in user, I want to be able to be able to see a table of named workouts
 
-## Adding Images
+ERD's:
+V1
+https://imgur.com/j76qqEa
+V2
+https://imgur.com/LvFLrh1
 
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
+Wire Frame:
+https://imgur.com/c6mVjVo
+https://imgur.com/8htgRoW
 
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
+## Project Planning
 
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
+Planning
+- [x]  Review full-stack-project-practice
+- [x]  Review full-stack-project-modeling-lab
+- [x]  Create User Stories
+- [x]  Create Wire Frames
+- [x]  Create ERD
 
-## Adding Fonts
+Set Up
+API
+- [x]  Download Rails API Template
+- [x]  Create a Github Repository
+- [x]  Deploy to Heroku
+Client
+- [x]  Download Browser Template
+- [x]  Create a Github Repository
+- [x]  Deploy to Github Pages
 
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
+API
+- [x]  Review rails-api-one-to-many or rails-api-many-to-many
+- [x]  Scaffold your resource
+- [x]  Test your resource's end points with curl scripts
+- [x]  Update resource controller to inherit from Protected or OpenRead controller
+- [x]  Test your resource's end points with curl scripts
+- [x]  Add the relationship to a User
+- [x]  Add User ownership to resource controller
 
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
+Client
+- [x]  Review api-token-auth
+- [x]  Sign Up (curl then web app)
+- [x]  Sign In (curl then web app)
+- [x]  Change Password (curl then web app)
+- [x]  Sign Out (curl then web page)
+- [x]  All API calls have success or failure messages
+- [x]  Review query-ajax-post
+- [x]  Create resource (curl then web app)
+- [x]  Get all of their owned resources (curl then web app)
+- [x]  Delete single resource (curl then web app)
+- [x]  Update single resource (curl then web app)
 
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
+Final Touches
+- [x]  README
+- [x]  Troubleshoot/Debug
+- [x]  Style
 
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
+## The Process
 
-## Tasks
+ The process of doing this project was a lot less painstaking than the last due to
+ planning.  From the very begginning I started with knowing excatly what it was that
+ I needed to get done and sticking to the task. Small goals large victories was how I
+ was able to complete this project. One small step at a time, I have very ambitious goals
+ with this project but at my level the first step was to find the simplest things and
+ to do those and get it working. It doesnt matter how it looks at first it just needs to
 
-Developers should run these often!
+I ran in to issues nearly everydary working on this application. To solve these
+problems I looked back at the resources I had and was given. What toos are already
+built for me that I can take advantage of is something I looked at for every issue.
+Can I take 15 extra minutes to learn more about this and get it to work, so that my
+code is more adaptable for future itterations. Also lets not forget I didnt have to
+do this alone, fellow devs, stack overflow, and google were all at my finger tips
+help. Ive learned alot during this process and feel more confident after finishing.
 
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+## Links
 
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+- [Wodify Client](https://ghills3620.github.io/full-stack-client/)
+- [Wodify Server] (https://wodify.herokuapp.com/)
