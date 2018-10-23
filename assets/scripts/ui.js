@@ -11,12 +11,9 @@ const signUpSuccess = function () {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#sign-up-form').hide()
   $('#results').empty()
->>>>>>> wodify
 }
 
 const signUpFailure = function () {
@@ -28,11 +25,8 @@ const signUpFailure = function () {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#results').empty()
->>>>>>> wodify
 }
 
 const signInSuccess = function (response) {
@@ -53,13 +47,10 @@ const signInSuccess = function (response) {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#results').empty()
->>>>>>> wodify
 }
 
 const signInFailure = function () {
@@ -72,11 +63,8 @@ const signInFailure = function () {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#results').empty()
->>>>>>> wodify
 }
 
 const changePasswordSuccess = function (response) {
@@ -86,11 +74,8 @@ const changePasswordSuccess = function (response) {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#results').empty()
->>>>>>> wodify
 }
 
 const changePasswordFailure = function (response) {
@@ -100,11 +85,8 @@ const changePasswordFailure = function (response) {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#results').empty()
->>>>>>> wodify
 }
 
 const signOutSuccess = function (response) {
@@ -120,14 +102,12 @@ const signOutSuccess = function (response) {
   $('#sign-in-form').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#change-password-form').hide()
-<<<<<<< HEAD
   $('#update-results').hide()
   $('#create-metcon').hide()
   $('#sign-out-button').hide()
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-=======
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
@@ -139,7 +119,6 @@ const signOutSuccess = function (response) {
   $('#sign-up-form').show()
   $('#sign-in-form').show()
   $('#results').empty()
->>>>>>> wodify
 }
 
 const signOutFailure = function () {
@@ -164,26 +143,20 @@ const getResultsSuccess = (data) => {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
->>>>>>> wodify
 }
 
 const getResultsFailure = function (response) {
   $('#display-message').html('Try Again')
   $('#display-message').css('color', 'red')
-<<<<<<< HEAD
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-=======
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
->>>>>>> wodify
 }
 
 const failure = (error) => {
@@ -200,8 +173,6 @@ const showWodSuccess = (data) => {
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
-<<<<<<< HEAD
-=======
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
@@ -211,7 +182,6 @@ const getGameFailure = function (data) {
   $('#display-message').html('Enter vaild WOD Id')
   $('#display-message').css('color', 'red')
   $('#square').addClass('hidden')
->>>>>>> wodify
 }
 
 module.exports = {
