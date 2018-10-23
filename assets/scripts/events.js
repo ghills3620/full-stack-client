@@ -54,7 +54,6 @@ const onCreateMetcon = function (event) {
 const onDeleteWod = (event) => {
   event.preventDefault()
   const wodId = $(event.target).closest('section').data('id')
-  console.log($(event.target))
   if (confirm('Are you sure you want to delete this workout?')) {
     api.deleteWod(wodId)
       .then(() => onGetResults(event))

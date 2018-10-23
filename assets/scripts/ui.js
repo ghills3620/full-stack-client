@@ -12,6 +12,8 @@ const signUpSuccess = function () {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#sign-up-form').hide()
+  $('#results').empty()
 }
 
 const signUpFailure = function () {
@@ -24,6 +26,7 @@ const signUpFailure = function () {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#results').empty()
 }
 
 const signInSuccess = function (response) {
@@ -45,6 +48,9 @@ const signInSuccess = function (response) {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#sign-up-form').hide()
+  $('#sign-in-form').hide()
+  $('#results').empty()
 }
 
 const signInFailure = function () {
@@ -58,6 +64,7 @@ const signInFailure = function () {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#results').empty()
 }
 
 const changePasswordSuccess = function (response) {
@@ -68,6 +75,7 @@ const changePasswordSuccess = function (response) {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#results').empty()
 }
 
 const changePasswordFailure = function (response) {
@@ -78,6 +86,7 @@ const changePasswordFailure = function (response) {
   $('#create-metcon').trigger('reset')
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
+  $('#results').empty()
 }
 
 const signOutSuccess = function (response) {
@@ -101,6 +110,9 @@ const signOutSuccess = function (response) {
   $('#sign-out-button').hide()
   $('#search-wod').trigger('reset')
   $('#results').trigger('reset')
+  $('#sign-up-form').show()
+  $('#sign-in-form').show()
+  $('#results').empty()
 }
 
 const signOutFailure = function () {
