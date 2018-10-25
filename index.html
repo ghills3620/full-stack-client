@@ -25,7 +25,24 @@
               <input required placeholder="Enter Password" name="credentials[password]" type="password"/>
               <input type="submit" />
             </form>
-
+            <!-- <form id="sign-in-form" class="input-group">
+              <div class="form-group">
+                <div class="row-4 row-sm-4">
+                <label>Email address</label>
+                <input required type="email" name="credentials[email]" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                <small class="form-text text-muted">We won't share your email with anyone.</small>
+              </div>
+              </div>
+                <div class="row-4 row-sm-4">
+              <div class="form-group">
+                <label>Password</label>
+                <input required type="password" name="credentials[password]" class="form-control" placeholder="Password">
+              </div>
+              </div>
+              <div class="row-4 row-sm-4">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form> -->
 
             <form id="change-password-form">
               <legend>Change Password</legend>
@@ -37,7 +54,8 @@
             <button id="sign-out-button" type ="button" class="hidden btn btn-secondary"> Sign Out </button>
             <br>
             <div id="results" class="content"></div>
-            <button id="get-results" type="button" class="btn btn-secondary">Public Whiteboard</button>
+
+          <div><button id="get-results" type="button" class="btn btn-secondary">Public Whiteboard</button></div>
 
             <form id="create-metcon">
               <legend>Input WOD</legend>
@@ -47,24 +65,24 @@
             </form>
 
             <form id="update-results">
-              <legend>Update WOD</legend>
+              <label>Update WOD</label>
               <textarea required id="wodId" placeholder="Id" name="wod[id]" row="3" col="20"></textarea>
               <textarea required placeholder="New Results" name="wod[result]" row="3" col="20"></textarea>
               <input type="submit" />
             </form>
 
-            <form id="search-wod">
+            <!-- <form id="search-wod">
               <legend>Searh WOD</legend>
               <textarea required placeholder="Id" name="wod[id]" row="2" col="10"></textarea>
               <input type="submit" />
-            </form>
-
-            <!-- <nav id="search-wod" class="navbar navbar-light bg-light">
-              <legend>Searh WOD</legend>
+            </form> -->
+<br>
+            <label>Searh WOD</label>
+            <nav id="search-wod" class="navbar navbar-light bg-light">
   <form class="form-inline" required placeholder="Id" name="wod[id]">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input required class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="wod[id]">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
-</nav> -->
+</nav>
     </body>
 </html
