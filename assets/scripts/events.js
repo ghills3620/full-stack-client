@@ -3,7 +3,7 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const store = require('./store.js')
+const store = require('./store.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -54,10 +54,14 @@ const onCreateMetcon = function (event) {
 const onDeleteWod = (event) => {
   event.preventDefault()
   const wodId = $(event.target).closest('section').data('id')
-  if (confirm('Are you sure you want to delete this workout?')) {
-    api.deleteWod(wodId)
-      .then(() => onGetResults(event))
-      .catch(ui.failure)
+  if (store.user) {
+    if (confirm('Are you sure you want to delete this workout?')) {
+      api.deleteWod(wodId)
+        .then(() => onGetResults(event))
+        .catch(ui.removeWodFailure)
+    }
+  } else {
+    ui.noUserFailure()
   }
 }
 
@@ -67,7 +71,7 @@ const onUpdateResults = function (event) {
   // if (confirm('Update this workout?')) {
   api.updateResults(data.wod)
     .then(() => onGetResults(event))
-    .catch(ui.failure)
+    .catch(ui.removeWodFailure)
   // }
 }
 

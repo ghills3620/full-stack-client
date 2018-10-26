@@ -10,6 +10,9 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
+      <div>The "WOD" is the "workout of the day." Each day a new WOD is posted to <a href="https://crossfit.complete">CrossFit.com</a>,
+        and it's part of a complete program designed to improve strength and conditioning. This app is to help you store and track the
+        workouts that you accomplish and also see what others in your gym community are doing.</div>
       <h3 id="display-message"></h3>
       <form id="sign-up-form">
               <legend>Sign Up!</legend>
@@ -26,16 +29,18 @@
               <input type="submit" />
             </form>
 
-
+            <div>
             <form id="change-password-form">
               <legend>Change Password</legend>
               <input required placeholder="Old Password" name="passwords[old]" type="password"/>
               <input required placeholder="New Passowrd" name="passwords[new]" type="password"/>
               <input type="submit" />
             </form>
-            <br>
+          </div>
+            <div>
             <button id="sign-out-button" type ="button" class="hidden btn btn-secondary"> Sign Out </button>
-            <br>
+          </div>
+            <h3 id="display-message2"></h3>
             <div id="results" class="content"></div>
             <button id="get-results" type="button" class="btn btn-secondary">Public Whiteboard</button>
 
