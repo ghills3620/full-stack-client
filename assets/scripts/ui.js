@@ -3,8 +3,9 @@ const store = require('./store.js')
 const showWodsTemplate = require('./templates/wod-listing.handlebars')
 
 const signUpSuccess = function () {
-  $('#display-message').html('Sign up successful')
+  $('#display-message').html('Sign up successful').fadeIn()
   $('#display-message').css('color', 'green')
+  $('#display-message').fadeOut(4000)
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
@@ -17,8 +18,9 @@ const signUpSuccess = function () {
 }
 
 const signUpFailure = function () {
-  $('#display-message').html('Something went wrong, please try again')
+  $('#display-message').html('Something went wrong, please try again').fadeIn()
   $('#display-message').css('color', 'red')
+  $('#display-message').fadeOut(4000)
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#change-password-form').trigger('reset')
@@ -30,8 +32,9 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response) {
-  $('#display-message').html('Sign in successful')
+  $('#display-message').html('Sign in successful').fadeIn()
   $('#display-message').css('color', 'green')
+  $('#display-message').html('Sign in successful').fadeOut(4000)
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
@@ -54,8 +57,9 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function () {
-  $('#display-message').html('Something went wrong, please try again')
+  $('#display-message').html('Something went wrong, please try again').fadeIn()
   $('#display-message').css('color', 'red')
+  $('#display-message').fadeOut(4000)
   $('#sign-in-form').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#change-password-form').trigger('reset')
@@ -68,8 +72,9 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#display-message').html('Change password succesful')
+  $('#display-message').html('Change password succesful').fadeIn()
   $('#display-message').css('color', 'green')
+  $('#display-message').fadeOut(4000)
   $('#change-password-form').trigger('reset')
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
@@ -79,8 +84,9 @@ const changePasswordSuccess = function (response) {
 }
 
 const changePasswordFailure = function (response) {
-  $('#display-message').html('Password Failed to change, please try again')
+  $('#display-message').html('Password Failed to change, please try again').fadeIn()
   $('#display-message').css('color', 'red')
+  $('#display-message').fadeOut(4000)
   $('#change-password-form').trigger('reset')
   $('#update-results').trigger('reset')
   $('#create-metcon').trigger('reset')
@@ -90,8 +96,9 @@ const changePasswordFailure = function (response) {
 }
 
 const signOutSuccess = function (response) {
-  $('#display-message').html('Signout Succesful')
+  $('#display-message').html('Signout Succesful').fadeIn()
   $('#display-message').css('color', 'green')
+  $('#display-message').fadeOut(4000)
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
   $('#change-password-form').addClass('hidden')
@@ -122,8 +129,9 @@ const signOutSuccess = function (response) {
 }
 
 const signOutFailure = function () {
-  $('#display-message').html('Something went wrong, please try again')
+  $('#display-message').html('Something went wrong, please try again').fadeIn()
   $('#display-message').css('color', 'red')
+  $('#display-message').fadeOut(4000)
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
@@ -149,11 +157,9 @@ const getResultsSuccess = (data) => {
 }
 
 const getResultsFailure = function (response) {
-  $('#display-message').html('Try Again')
+  $('#display-message').html('Try Again').fadeIn()
   $('#display-message').css('color', 'red')
-  $('#update-results').trigger('reset')
-  $('#create-metcon').trigger('reset')
-  $('#sign-out-button').trigger('reset')
+  $('#display-message').fadeOut(4000)
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
@@ -161,6 +167,22 @@ const getResultsFailure = function (response) {
 
 const failure = (error) => {
   console.error(error)
+}
+
+const removeWodFailure = function () {
+  // if (store.user.token === false) {
+  //   $('#display-message').html('Please sign in').fadeToggle(2000)
+  //   $('#display-message').css('color', 'red')
+  // }
+  $('#display-message2').html('Select a workout that is yours').fadeIn()
+  $('#display-message2').css('color', 'red')
+  $('#display-message2').fadeOut(4000)
+  $('#update-results').trigger('reset')
+  $('#create-metcon').trigger('reset')
+  $('#sign-out-button').trigger('reset')
+  $('#search-wod').trigger('reset')
+  $('#sign-up-form').trigger('reset')
+  $('#sign-in-form').trigger('reset')
 }
 
 const createMetconFailure = function (data) {
@@ -179,8 +201,16 @@ const showWodSuccess = (data) => {
 }
 
 const getGameFailure = function (data) {
-  $('#display-message').html('Enter vaild WOD Id')
+  $('#display-message').html('Enter vaild WOD Id').fadeIn()
   $('#display-message').css('color', 'red')
+  $('#display-message').fadeOut(4000)
+  $('#square').addClass('hidden')
+}
+
+const noUserFailure = function (data) {
+  $('#display-message2').html('Please Sign In to update your results').fadeIn()
+  $('#display-message2').css('color', 'red')
+  $('#display-message2').fadeOut(4000)
   $('#square').addClass('hidden')
 }
 
@@ -198,7 +228,9 @@ module.exports = {
   showWodSuccess,
   failure,
   createMetconFailure,
-  getGameFailure
+  getGameFailure,
+  removeWodFailure,
+  noUserFailure
 }
 
 // production

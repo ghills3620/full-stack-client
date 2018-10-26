@@ -1,5 +1,14 @@
 ![Wodify Logo](http://crossfitparadox.com/wp-content/uploads/2015/09/wodify-logo.jpe)
 
+## What is Wodify?
+
+If you've ever been to a CrossFit box (aka gym) and taken part in a WOD (workout of the day), you'll know that the whiteboard is an integral part of the whole experience: It's where the WOD is written out beforehand and where everyone's results are recorded afterward. So why get rid of whiteboards at CrossFit facilities all over the country? Because, they say, they've got something better. Needless to say, we're intrigued.
+
+It's called Wodify, and here's how it works: Gym owners can purchase the software that helps them manage their members, along with a digital kiosk and display screen that replaces the gym's traditional whiteboard. Gym members, meanwhile, all get a free app for their smartphone. They'll use that app to check into class, record their WOD results, and manage their account; they can even sync the app with their social networks, so it's easier to brag about, errrr, share out their latest accomplishments via social media. (Forgot your phone? You can also use the kiosk to enter your info.)
+
+Now, this isn't the first program out there designed for CrossFitters to use for tracking their workouts; a quick look through the App store will verify that. But Wodify is different because it connects everyone at a specific box together with the same program that's tailored just for the particular group; you wouldn't have to tell your app what today's WOD is, for example, because it already knows. It also helps with more practical things, like paying your bill and tracking your attendance. And, unlike a white board that gets wiped clean every day, the app automatically stores everyone's results (and workouts, duh) for future reference.
+
+
 ## Technologies Used
 
 [Javascript](https://www.javascript.com/)
