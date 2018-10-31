@@ -15,6 +15,7 @@ const signUpSuccess = function () {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').hide()
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const signUpFailure = function () {
@@ -29,6 +30,7 @@ const signUpFailure = function () {
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const signInSuccess = function (response) {
@@ -54,6 +56,7 @@ const signInSuccess = function (response) {
   $('#sign-up-form').hide()
   $('#sign-in-form').hide()
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const signInFailure = function () {
@@ -69,6 +72,7 @@ const signInFailure = function () {
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const changePasswordSuccess = function (response) {
@@ -81,6 +85,7 @@ const changePasswordSuccess = function (response) {
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const changePasswordFailure = function (response) {
@@ -93,6 +98,7 @@ const changePasswordFailure = function (response) {
   $('#sign-out-button').trigger('reset')
   $('#search-wod').trigger('reset')
   $('#results').empty()
+  $('#get-results').show()
 }
 
 const signOutSuccess = function (response) {
@@ -130,6 +136,7 @@ const signOutSuccess = function (response) {
   if (store.user === undefined) {
     $('section[data-id] button').hide()
   }
+  $('#get-results').show()
 }
 
 const signOutFailure = function () {
@@ -139,6 +146,7 @@ const signOutFailure = function () {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  $('#get-results').show()
 }
 
 // const getResultsSuccess = function (response) {
@@ -167,6 +175,7 @@ const getResultsSuccess = (data) => {
   } else if (store.user === undefined) {
     $('.delete').hide()
   }
+  $('#get-results').hide()
 }
 
 const getResultsFailure = function (response) {
@@ -176,6 +185,7 @@ const getResultsFailure = function (response) {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  $('#get-results').show()
 }
 
 const removeWodFailure = function () {
@@ -192,6 +202,7 @@ const removeWodFailure = function () {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  $('#get-results').show()
 }
 
 const createMetconFailure = function (data) {
@@ -207,6 +218,7 @@ const showWodSuccess = (data) => {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  $('#get-results').show()
 }
 
 const getGameFailure = function (data) {
@@ -214,6 +226,7 @@ const getGameFailure = function (data) {
   $('#display-message').css('color', 'red')
   $('#display-message').fadeOut(4000)
   $('#square').addClass('hidden')
+  $('#search-wod').trigger('reset')
 }
 
 const noUserFailure = function (data) {
@@ -245,7 +258,7 @@ module.exports = {
   createMetconFailure,
   getGameFailure,
   removeWodFailure,
-  noUserFailure,
+  noUserFailure
   // beforeLogin
 }
 
