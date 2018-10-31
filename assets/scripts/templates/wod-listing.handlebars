@@ -1,7 +1,6 @@
 {{#each wods as |wod|}}
   <!-- {{> partial}}
   Don't uncomment yet -->
-
   <div>
     <h3 data-id="{{wod.id}}"> <small>Athelete: {{wod.user.email}}</small></h3>
   <section data-id="{{wod.id}}">
@@ -13,7 +12,7 @@
       go workout.
     {{/if}}
     </p>
-    <button id="delete" type="submit" class="btn btn-secondary">Remove</button>
+    <button class="delete" type="submit" class="btn btn-secondary">Remove</button>
   </section>
   </div>
   <br>

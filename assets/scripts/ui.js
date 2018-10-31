@@ -126,6 +126,10 @@ const signOutSuccess = function (response) {
   $('#sign-up-form').show()
   $('#sign-in-form').show()
   $('#results').empty()
+  store.user = undefined
+  if (store.user === undefined) {
+    $('section[data-id] button').hide()
+  }
 }
 
 const signOutFailure = function () {
@@ -154,6 +158,15 @@ const getResultsSuccess = (data) => {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
+  if (store.user) {
+    for (let i = 0; i < data.wods.length; i++) {
+      if (store.user.id !== data.wods[i].user.id) {
+        $('section[data-id="' + data.wods[i].id + '"] button').hide()
+      }
+    }
+  } else if (store.user === undefined) {
+    $('.delete').hide()
+  }
 }
 
 const getResultsFailure = function (response) {
@@ -163,10 +176,6 @@ const getResultsFailure = function (response) {
   $('#search-wod').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
-}
-
-const failure = (error) => {
-  console.error(error)
 }
 
 const removeWodFailure = function () {
@@ -213,6 +222,13 @@ const noUserFailure = function (data) {
   $('#display-message2').fadeOut(4000)
   $('#square').addClass('hidden')
 }
+//
+// const beforeLogin = function (data) {
+//   console.log(store.user)
+//   if (store.user) {
+//     $('section[data-id] button').hide()
+//   }
+// }
 
 module.exports = {
   signUpSuccess,
@@ -226,11 +242,11 @@ module.exports = {
   getResultsSuccess,
   getResultsFailure,
   showWodSuccess,
-  failure,
   createMetconFailure,
   getGameFailure,
   removeWodFailure,
-  noUserFailure
+  noUserFailure,
+  // beforeLogin
 }
 
 // production

@@ -37,9 +37,9 @@ const onSignOut = function () {
 
 const onGetResults = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.getResults(data)
+  api.getResults()
     .then(ui.getResultsSuccess)
+    .then(ui.beforeLogin)
     .catch(ui.getGameFailure)
 }
 
@@ -78,6 +78,7 @@ const onUpdateResults = function (event) {
 const onSearchWod = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data.wod)
   api.searchWod(data.wod)
     .then(ui.showWodSuccess)
     .catch(ui.getGameFailure)
