@@ -1,6 +1,7 @@
 'use strict'
 const store = require('./store.js')
 const showWodsTemplate = require('./templates/wod-listing.handlebars')
+const getFormFields = require('../../lib/get-form-fields.js')
 
 const signUpSuccess = function () {
   $('#display-message').html('Sign up successful').fadeIn()
@@ -219,6 +220,14 @@ const showWodSuccess = (data) => {
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
   $('#get-results').show()
+  if (store.user) {
+    if (store.user.id !== data.wod.user.id) {
+      $('section[data-id="' + data.wod.id + '"] button').hide()
+    }
+  } else if (store.user === undefined) {
+    $('.delete').hide()
+  }
+  $('#get-results').hide()
 }
 
 const getGameFailure = function (data) {
